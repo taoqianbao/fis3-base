@@ -3,8 +3,11 @@ fis.set('project.name', 'fis3-base');
 fis.set('project.static', '/static');
 fis.set('project.files', ['*.html', 'map.json', '/test/*']);
 
+fis.config.set('project.watch.usePolling', true);
+
 //fis-parser-babel-5.x
 fis.set('project.fileType.text', 'es');
+
 
 
 
