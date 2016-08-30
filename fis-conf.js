@@ -1,5 +1,6 @@
 // 设置项目属性
-fis.set('project.name', 'fis3-base');
+fis.set('project.name', '');
+fis.set('project.host', 'http://127.0.0.1:8080');
 fis.set('project.static', '/static');
 fis.set('project.files', ['*.html', 'map.json', '/test/*']);
 
@@ -133,13 +134,17 @@ var map = {
         path: ''
     },
     'prd': {
-        host: 'https://github.com/taoqianbao/',
+        host: '/${project.host}',
         path: '/${project.name}'
     }
 };
 
 fis.util.map(map, function (k, v) {
     var domain = v.host + v.path;
+
+    console.log(domain);
+
+    var domain = 'http://127.0.0.1:8080';
 
     fis.media(k)
         .match('**.{es,js}', {
