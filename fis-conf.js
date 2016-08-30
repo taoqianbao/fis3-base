@@ -3,6 +3,11 @@ fis.set('project.name', 'fis3-base');
 fis.set('project.static', '/static');
 fis.set('project.files', ['*.html', 'map.json', '/test/*']);
 
+//fis-parser-babel-5.x
+fis.set('project.fileType.text', 'es');
+
+
+
 // 引入模块化开发插件，设置规范为 commonJs 规范。
 
 fis.hook('commonjs', {
@@ -43,13 +48,17 @@ fis.match('/modules/(**)', {
     release: '${project.static}/$1'
 })
 
+
+//node-sass
+//fis-parser-node-sass
+
 // 配置css
 fis.match(/^\/modules\/(.*\.scss)$/i, {
     rExt: '.css',
     isMod: true,
     release: '${project.static}/$1',
-    parser: fis.plugin('sass', {
-        include_paths: ['modules/css', 'components'] // 加入文件查找目录
+    parser: fis.plugin('node-sass', {
+        include_paths: ['./modules/css', './components'] // 加入文件查找目录
     }),
     postprocessor: fis.plugin('autoprefixer', {
         browsers: ['> 1% in CN', 'last 2 versions', 'IE >= 8'] // pc
