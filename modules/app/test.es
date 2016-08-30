@@ -1,4 +1,5 @@
 var $ = require('jquery');
+
 // 测试UIbase
 var UIBase = require('ui/base/base');
 console.log(UIBase);
@@ -14,7 +15,7 @@ $('body').append(tpl({}));
 
 // 测试 underscore
 var _ = require('underscore');
-console.log(_)
+console.log(_);
 
 // 测试data.js
 
@@ -22,7 +23,6 @@ var Data = require('lib/data.js/data.js');
 console.log(Data);
 
 import {guid, uuid} from 'util/guid/guid';
-
 
 var count = 10;
 while(count--) {

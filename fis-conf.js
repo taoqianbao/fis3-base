@@ -25,7 +25,6 @@ fis.match('/modules/**', {
     useSameNameRequire: true
 });
 
-
 // ------ 配置lib
 fis.match('/lib/**.js', {
     release: '${project.static}/$&'
@@ -49,7 +48,7 @@ fis.match('/components/**.js', {
 // ------ 配置modules
 fis.match('/modules/(**)', {
     release: '${project.static}/$1'
-})
+});
 
 
 //node-sass
@@ -134,7 +133,7 @@ var map = {
         path: ''
     },
     'prd': {
-        host: 'http://yanhaijing.com',
+        host: 'https://github.com/taoqianbao/',
         path: '/${project.name}'
     }
 };
