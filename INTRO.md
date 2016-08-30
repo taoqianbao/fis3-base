@@ -54,6 +54,7 @@ fis依赖node，了解node请看这里[nodejs.org](http://nodejs.org/)。
     │  ├─lib
     │  ├─ui
     │  └─util
+		│  └─widget
     └─test
 
 根目录下存放html文件。
@@ -76,4 +77,4 @@ https://github.com/fis-components
 **注：**为了稳定，建议把components也加入版本控制库。
 
 ## 问题反馈
-使用过程中的常见问题请见这里 [issue](https://github.com/yanhaijing/fis3-base/issues)。
+使用过程中的常见问题请见这里 [issue](https://github.com/taoqianbao/fis3-base/issues)。
