@@ -131,6 +131,12 @@ fis.match('/test/server.conf', {
 });
 
 
+fis.match('*.jsx', {
+  rExt: '.js',
+  parser: fis.plugin('react', {})
+});
+
+
 /*************************打包规范*****************************/
 
 // 因为是纯前端项目，依赖不能自断被加载进来，所以这里需要借助一个 loader 来完成，
@@ -140,9 +146,10 @@ fis.match('::package', {
     // 分析 __RESOURCE_MAP__ 结构，来解决资源加载问题
     postpackager: fis.plugin('loader', {
         //include: ""
-        allInOne: false,
-        resourceType: 'commonJs',   //[auto, amd, cmd, commonJs]
-        useInlineMap: true // 资源映射表内嵌
+        allInOne: false,  //js&css打包成一个文件
+        sourceMap: true, //是否生成依赖map文件
+        resourceType: 'amd',   //[auto, amd, cmd, commonJs]
+        useInlineMap: true // 资源映射表内嵌|是否将sourcemap作为内嵌脚本输出
     })
 });
 
