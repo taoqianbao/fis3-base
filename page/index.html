@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html><!--
+    @require require.js
+--><html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
-    <meta content="telephone=no" name="format-detection"/>
-    <meta content="address=no" name="format-detection"/>
-
+    <link rel="import" href="layout/header.html?__inline">
     <title>Index Page</title>
-    <link rel="stylesheet" href="modules/css/common.scss">
-    <link rel="stylesheet" href="modules/css/index.scss">
     <!--STYLE_PLACEHOLDER-->
 </head>
 <body>
@@ -30,6 +25,10 @@
         <link rel="import" href="modules/widget/footer/footer.html?__inline">
     </div>
 
+    <script src="lib/mod.js"></script>
     <!--SCRIPT_PLACEHOLDER-->
+    <script>
+        require.async('bootstrap');
+    </script>
 </body>
 </html>

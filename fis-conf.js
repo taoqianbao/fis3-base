@@ -10,14 +10,31 @@ fis.config.set('project.watch.usePolling', true);
 fis.set('project.fileType.text', 'es');
 
 
+fis.match('*.html', {
+    useMap: true
+});
+
+fis.match('*.{js,css}', {
+    // 开启 hash
+    useHash: false
+});
+
 
 
 // 引入模块化开发插件，设置规范为 commonJs 规范。
 
-fis.hook('commonjs', {
-    baseUrl: './modules',
-    extList: ['.js', '.es']
+// fis.hook('commonjs', {
+//     baseUrl: './modules',
+//     extList: ['.js', '.es']
+// });
+
+fis.unhook('commonjs');
+fis.hook('amd', {
+  baseUrl: './modules',
+  extList: ['.js', '.es']
 });
+
+
 
 /*************************目录规范*****************************/
 
@@ -122,7 +139,9 @@ fis.match('::package', {
     // npm install [-g] fis3-postpackager-loader
     // 分析 __RESOURCE_MAP__ 结构，来解决资源加载问题
     postpackager: fis.plugin('loader', {
-        resourceType: 'commonJs',
+        //include: ""
+        allInOne: false,
+        resourceType: 'commonJs',   //[auto, amd, cmd, commonJs]
         useInlineMap: true // 资源映射表内嵌
     })
 });
@@ -134,17 +153,14 @@ var map = {
         path: ''
     },
     'prd': {
-        host: '/${project.host}',
-        path: '/${project.name}'
+        host: '${project.host}',
+        path: '${project.name}'
     }
 };
 
 fis.util.map(map, function (k, v) {
+
     var domain = v.host + v.path;
-
-    console.log(domain);
-
-    var domain = 'http://127.0.0.1:8080';
 
     fis.media(k)
         .match('**.{es,js}', {
