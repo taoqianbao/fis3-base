@@ -1,7 +1,7 @@
 {
   "name": "tqb-fis3-base",
   "version": "1.1.1",
-  "description": "基于fis3的纯前端解决方案",
+  "description": "纯前端解决方案",
   "main": "fis-conf.js",
   "directories": {
     "test": "test"
@@ -21,11 +21,11 @@
   "license": [
     {
       "type": "MIT",
-      "url": "https://github.com/peter/fis3-base/blob/master/MIT-LICENSE.txt"
+      "url": "https://github.com/taoqianbao/fis3-base/blob/master/MIT-LICENSE.txt"
     }
   ],
   "bugs": {
-    "url": "https://github.com/peter/fis3-base/issues"
+    "url": "https://github.com/taoqianbao/fis3-base/issues"
   },
-  "homepage": "https://github.com/peter/fis3-base"
+  "homepage": "https://github.com/taoqianbao/fis3-base"
 }
