@@ -22,18 +22,16 @@ fis.match('*.{js,css}', {
 
 
 // 引入模块化开发插件，设置规范为 commonJs 规范。
-
-// fis.hook('commonjs', {
-//     baseUrl: './modules',
-//     extList: ['.js', '.es']
-// });
-
-fis.unhook('commonjs');
-fis.hook('amd', {
-  baseUrl: './modules',
-  extList: ['.js', '.es']
+fis.hook('commonjs', {
+    baseUrl: './modules',
+    extList: ['.js', '.es']
 });
 
+// fis.unhook('commonjs');
+// fis.hook('amd', {
+//   baseUrl: './modules',
+//   extList: ['.js', '.es']
+// });
 
 
 /*************************目录规范*****************************/
@@ -68,6 +66,11 @@ fis.match('/modules/(**)', {
     release: '${project.static}/$1'
 });
 
+
+//  ------ 配置 favicon.ico
+fis.match('/favicon.ico', {
+    release: '${project.static}/$1'
+});
 
 //node-sass
 //fis-parser-node-sass

@@ -20,7 +20,9 @@ console.log(_);
 // 测试data.js
 
 var Data = require('lib/data.js/data.js');
-console.log(Data);
+Data.sub('set', 'a', function (e) {console.warn(e.data)});//订阅消息，当a被设置时，会派发消息
+Data.set('a', 1);//存入数据
+var d1 = Data.get('a');//读取数据
 
 import {guid, uuid} from 'util/guid/guid';
 
