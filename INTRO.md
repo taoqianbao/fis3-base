@@ -12,7 +12,13 @@ fis依赖node，了解node请看这里[nodejs.org](http://nodejs.org/)。
 
     npm install -g fis3-hook-commonjs
 
+
     npm install -g fis-parser-node-sass
+
+    npm install -g fis-parser-sass
+		npm install -g fis-parser-sass-bin
+
+
     npm install -g fis-parser-template
     npm install -g fis-parser-babel-5.x
 
