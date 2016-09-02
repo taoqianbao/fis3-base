@@ -1,6 +1,6 @@
 // 设置项目属性
 fis.set('project.name', '');
-fis.set('project.host', 'http://127.0.0.1:8080');
+fis.set('project.host', '');
 fis.set('project.static', '/static');
 fis.set('project.files', ['*.html', 'map.json', '/test/*']);
 
@@ -133,7 +133,6 @@ fis.match('/test/server.conf', {
   release: '/config/server.conf'
 });
 
-
 fis.match('*.jsx', {
   rExt: '.js',
   parser: fis.plugin('react', {})
@@ -167,6 +166,13 @@ var map = {
         path: '${project.name}'
     }
 };
+
+fis.config.merge({
+    pack: {
+        'pkg/base.js': ['/components/jquery/*.js', '/modules/lib/ysbbase.js']
+    }
+});
+
 
 fis.util.map(map, function (k, v) {
 
