@@ -9,7 +9,6 @@ fis.config.set('project.watch.usePolling', true);
 //fis-parser-babel-5.x
 fis.set('project.fileType.text', 'es');
 
-
 fis.match('*.html', {
     useMap: true
 });
@@ -169,7 +168,7 @@ var map = {
 
 fis.config.merge({
     pack: {
-        'pkg/base.js': ['/components/jquery/*.js', '/modules/lib/ysbbase.js']
+        'pkg/base.js': ['lib/mod.js', '/components/jquery/*.js', '/modules/lib/ysbbase.js']
     }
 });
 
@@ -200,7 +199,8 @@ fis.util.map(map, function (k, v) {
             spriter: fis.plugin('csssprites', {
                 layout: 'matrix',
                 // scale: 0.5, // 移动端二倍图用
-                margin: '10'
+                margin: '10',
+
             }),
             postpackager: fis.plugin('loader', {
                 allInOne: true,
@@ -240,6 +240,21 @@ fis.media('prd')
     })
     .match('**.{scss,css}', {
         optimizer: fis.plugin('clean-css', {
-            'keepBreaks': true //保持一个规则一个换行
+            'keepBreaks': true  //保持一个规则一个换行
         })
-    });
+    })
+    // .match('::package', {
+    //   packager: fis.plugin('deps-pack', {
+    //      'pkg/frame.css':[
+    //        '/static/scss/**.css',
+    //        '/static/scss/**.scss',
+    //        '/widget/**.scss'
+    //      ],
+    //      'pkg/boot.js': [
+    //         'static/js/require.js',
+    //         'components/jquery/jquery.js',
+    //         'modules/lib/ysbbase.js'
+    //      ]
+    //   })
+    // })
+    ;
